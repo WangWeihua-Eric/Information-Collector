@@ -28,6 +28,7 @@ module.exports = {
     noInfo: true,
     overlay: true,
     publicPath: CONFIG.outputDir,
+    disableHostCheck: true
   },
   performance: {
     hints: false

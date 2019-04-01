@@ -26,4 +26,21 @@
     </div>
   </body>
   <script src="dist/ubt/ubt.js"></script>
+  <script>
+    /* 使用 */
+    console.log(new QunarUbt({
+      designs: {
+        /* 可定制 pageName 生成方式 */
+        generatePageName: function (callback, handler, QunarUbt, oldFunc) {
+          console.log('生成页面名')
+          return 'desigh'
+        },
+        /* 获取userId的方式，可以定制, 如果uid的获取方式是异步，请将生成的uid传入callback函数 */
+        generateUserId: function (callback, handler, QunarUbt, oldFunc) {
+          /* 异步操作时 使用 callback(window.QunarUbt.uuid()) */
+          return QunarUbt.Utils.uuid()
+        }
+      }
+    }))
+  </script>
 </html>

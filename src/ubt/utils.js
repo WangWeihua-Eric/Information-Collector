@@ -26,6 +26,8 @@ export const getDevicePlatform = function () {
         return 'adr'
     } else if (u.indexOf('iPhone') > -1) {
         return 'ios'
+    } else if (u.indexOf('iPad') > -1) {
+      return 'ipad'
     } else if (u.indexOf('Windows Phone') > -1) {
         return 'winphone'
     } else if (isWechat()) {
@@ -47,7 +49,9 @@ export const uuid = function (len, radix) {
     radix = radix || chars.length
     if (len) {
         // Compact form
-        for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random() * radix]
+        for (i = 0; i < len; i++){
+          uuid[i] = chars[0 | Math.random() * radix]
+        }
     } else {
         // rfc4122, version 4 form
         var r
